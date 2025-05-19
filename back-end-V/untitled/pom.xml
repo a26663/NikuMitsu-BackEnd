@@ -43,6 +43,15 @@
 
   <build>
     <finalName>restaurante-backend</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version> <!-- O 3.3.2, prueba con la más reciente estable -->
+      </plugin>
+      <!-- Opcional: Especificar también maven-compiler-plugin si quieres más control -->
+
+    </plugins>
   </build>
 
 </project>
