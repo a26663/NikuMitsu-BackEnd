@@ -50,13 +50,6 @@ public class AdminAgregarUsuarioServlet extends HttpServlet {
             int idRol = body.getInt("id_rol");
             boolean activo = body.optBoolean("activo", true);
 
-            // Validar que el rol sea admin o repartidor
-            if (idRol != ID_ROL_ADMIN && idRol != 3 /*ID_ROL_REPARTIDOR*/) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                jsonResponse.put("error", "Solo se pueden crear usuarios Admin o Repartidor.");
-                out.print(jsonResponse.toString());
-                return;
-            }
 
             // Dirección es requerida para todos los usuarios según tu schema
             // Si estos usuarios no necesitan dirección, debes hacer esas columnas NULLABLE en la BD

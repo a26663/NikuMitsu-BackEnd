@@ -54,12 +54,7 @@ public class AdminModificarUsuarioServlet extends HttpServlet {
             String password = body.optString("password", null); // Contraseña es opcional
 
             // Validar que el rol sea admin o repartidor
-            if (idRol != ID_ROL_ADMIN && idRol != 3 /*ID_ROL_REPARTIDOR*/) {
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                jsonResponse.put("error", "Solo se pueden editar usuarios con rol de Administrador o Repartidor.");
-                out.print(jsonResponse.toString());
-                return;
-            }
+
 
             // No actualizamos dirección desde aquí, solo datos de usuario principales y rol/estado
             // Si se quisiera, se añadirían los campos de dirección al body y a la query.
